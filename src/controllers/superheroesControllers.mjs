@@ -7,7 +7,7 @@ import {
 
 import { renderizarListaSuperheroes, renderizarSuperheroe } from "../views/responseView.mjs";
 
-export async function obtenerSuperHeroePorIdController(req,res){
+export async function obtenerSuperheroePorIdController(req,res){
     const {id} = req.params;
     const superheroe = await obtenerSuperheroePorId(id);
 
@@ -24,7 +24,7 @@ export async function obtenerTodosLosSuperheroesController(req,res){
     res.send(renderizarListaSuperheroes(superheroes));
 }
 
-export async function buscarSuperHeroesPorAtributoController(req,res){
+export async function buscarSuperheroesPorAtributoController(req,res){
     const {atributo, valor} = req.params;
     const superheroes = await buscarSuperheroesPorAtributo(atributo,valor);
 
@@ -35,7 +35,7 @@ export async function buscarSuperHeroesPorAtributoController(req,res){
     }
 }
 
-export async function obtenerSuperHeroesMayoresDe30Controller(req,res) {
+export async function obtenerSuperheroesMayoresDe30Controller(req,res) {
     console.log("entramos al controlador de mayores de 30")
     const superheroes = await obtenerSuperheroesMayoresDe30();
     console.log(superheroes)
